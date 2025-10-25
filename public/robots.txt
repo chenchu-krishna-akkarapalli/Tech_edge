@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.reallygreatsite.com/sitemap.xml
+Sitemap: https://techedge-chi.vercel.app/sitemap.xml
