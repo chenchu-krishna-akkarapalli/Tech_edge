@@ -9,6 +9,7 @@ import {
   Settings,
   ArrowRight,
 } from "lucide-react";
+import { company } from "../content/companyProfile";
 
 const Services = () => {
   const ref = useRef(null);
@@ -19,71 +20,7 @@ const Services = () => {
   const springConfig = { type: "spring", stiffness: 120, damping: 18, mass: 0.75 };
   const bouncySpring = { type: "spring", stiffness: 200, damping: 15, mass: 0.8 };
 
-  const services = [
-    {
-      icon: Lightbulb,
-      title: "Digital Transformation",
-      subtitle: "& Consulting",
-      description:
-        "Business-aligned roadmaps, process automation, and compliance solutions that drive meaningful change.",
-      image: "/Assets/services/DigitalTransformation.jpg",
-      gradient: "from-purple-600 to-pink-600",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & Infrastructure",
-      subtitle: "Solutions",
-      description:
-        "Multi-cloud management, DevOps excellence, and infrastructure automation for scalable operations.",
-      image: "/Assets/services/Cloud-bg.jpg",
-      gradient: "from-blue-600 to-cyan-600",
-    },
-    {
-      icon: Brain,
-      title: "Data Intelligence",
-      subtitle: "& AI",
-      description:
-        "Predictive analytics, data governance, and AI-powered IT operations that unlock insights.",
-      image: "/Assets/services/DataIntelligence.jpg",
-      gradient: "from-indigo-600 to-purple-600",
-    },
-    {
-      icon: Shield,
-      title: "Cybersecurity",
-      subtitle: "& Compliance",
-      description:
-        "Comprehensive threat monitoring, VAPT services, and regulatory automation for secure enterprises.",
-      image: "/Assets/services/Cybersecurity.jpg",
-      gradient: "from-green-600 to-emerald-600",
-    },
-    {
-      icon: Code,
-      title: "Application Modernization",
-      subtitle: "& Integration",
-      description:
-        "Cloud-native migration, API-first integration, and real-time data pipelines for modern applications.",
-      image: "/Assets/services/ApplicationModernization.jpg",
-      gradient: "from-orange-600 to-red-600",
-    },
-    {
-      icon: Settings,
-      title: "Managed Services",
-      subtitle: "& Support",
-      description:
-        "Flexible delivery models (onshore, offshore, hybrid) with PMO-driven governance and 24/7 support.",
-      image: "/Assets/services/ManagedServices.jpg",
-      gradient: "from-teal-600 to-blue-600",
-    },
-    {
-      icon: Lightbulb,
-      title: "Digital Transformation",
-      subtitle: "& Consulting",
-      description:
-        "Business-aligned roadmaps, process automation, and compliance solutions that drive meaningful change.",
-      image: "/Assets/services/DigitalTransformation.jpg",
-      gradient: "from-purple-600 to-pink-600",
-    },
-  ];
+  const services = company.services;
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -14,6 +14,7 @@ import {
   Target,
   Globe,
 } from "lucide-react";
+import { company } from "../content/companyProfile";
 
 const About = () => {
   const ref = useRef(null);
@@ -38,15 +39,13 @@ const About = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-6 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-bold tracking-widest mb-4 font-orbitron">
-            ABOUT US
+            {company.about.badge}
           </span>
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight font-orbitron">
-            WHO WE ARE
+            {company.about.heading}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-poppins">
-            A global team of certified technologists, cloud architects, and
-            cybersecurity experts driving digital transformation for enterprises
-            worldwide.
+            {company.about.body}
           </p>
         </motion.div>
 

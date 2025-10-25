@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Zap, Heart, Award, Users, Gauge } from 'lucide-react';
+import { company } from "../content/companyProfile";
 
 const Values = () => {
   const ref = useRef(null);
@@ -15,33 +16,7 @@ const Values = () => {
   const springConfig = { type: "spring", stiffness: 120, damping: 18, mass: 0.75 };
   const bouncySpring = { type: "spring", stiffness: 200, damping: 15, mass: 0.8 };
 
-  const values = [
-    {
-      icon: Zap,
-      title: 'Innovation',
-      description: 'Driving change through smart, future-ready solutions that push boundaries.',
-    },
-    {
-      icon: Heart,
-      title: 'Integrity',
-      description: 'Building trust with transparent, secure, and reliable services every day.',
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'Delivering measurable outcomes with certified expertise and proven methods.',
-    },
-    {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'Partnering with clients for shared success and long-term growth.',
-    },
-    {
-      icon: Gauge,
-      title: 'Agility',
-      description: 'Adapting quickly to evolving business needs and market dynamics.',
-    },
-  ];
+  const values = company.values;
 
   const containerVariants = {
     hidden: { opacity: 0 },

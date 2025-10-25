@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { company } from "../content/companyProfile";
 
 const Mission = () => {
   const ref = useRef(null);
@@ -9,12 +10,7 @@ const Mission = () => {
   const springConfig = { type: "spring", stiffness: 120, damping: 18, mass: 0.75 };
   const bouncySpring = { type: "spring", stiffness: 200, damping: 15, mass: 0.8 };
 
-  const missionPoints = [
-    'Modernize operations with cloud, AI, and automation.',
-    'Enable smarter decisions with data-driven intelligence and predictive insights.',
-    'Enhance experiences for customers, employees, and stakeholders alike.',
-    'Strengthen resilience through robust cybersecurity and compliance frameworks.',
-  ];
+  const missionPoints = company.mission.points;
 
   return (
     <section id="mission" ref={ref} className="py-24 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
@@ -36,14 +32,13 @@ const Mission = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-6 py-2 glass rounded-full text-white text-sm font-bold tracking-widest mb-6 border border-white/30 font-orbitron">
-            OUR MISSION
+            {company.mission.badge}
           </span>
           <h2 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight font-orbitron">
-            EMPOWERING GROWTH
+            {company.mission.heading}
           </h2>
           <p className="text-xl text-white/90 leading-relaxed max-w-4xl mx-auto font-poppins">
-            To empower enterprises with innovative, secure, and scalable technology solutions 
-            that bridge business strategy and IT excellence.
+            {company.mission.body}
           </p>
         </motion.div>
 

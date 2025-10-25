@@ -1,0 +1,5 @@
+# robots.txt for TECH EDGE SPA
+User-agent: *
+Allow: /
+
+Sitemap: https://www.reallygreatsite.com/sitemap.xml

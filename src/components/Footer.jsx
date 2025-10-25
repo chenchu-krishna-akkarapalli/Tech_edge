@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Globe, Linkedin, Twitter, Github, Facebook } from 'lucide-react';
+import { company } from "../content/companyProfile";
 
 const Footer = () => {
   // Enhanced spring animation config
@@ -24,12 +25,11 @@ const Footer = () => {
     { id: 'vision', label: 'Vision' },
   ];
 
-  const socialLinks = [
-    { icon: Linkedin, url: '#', label: 'LinkedIn' },
-    { icon: Twitter, url: '#', label: 'Twitter' },
-    { icon: Github, url: '#', label: 'GitHub' },
-    { icon: Facebook, url: '#', label: 'Facebook' },
-  ];
+  const socialLinks = company.socials.map((s) => ({
+    icon: s.key === 'LinkedIn' ? Linkedin : s.key === 'Twitter' ? Twitter : s.key === 'GitHub' ? Github : Facebook,
+    url: s.url,
+    label: s.key,
+  }));
 
   return (
     <footer id="contact" className="bg-gradient-to-br from-primary via-secondary to-primary py-20 relative overflow-hidden">
@@ -63,25 +63,25 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-4">
               <a 
-                href="mailto:info@techedge.com" 
+                href={`mailto:${company.contact.email}`} 
                 className="flex items-center gap-3 text-purple-200 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="font-medium">info@techedge.com</span>
+                <span className="font-medium">{company.contact.email}</span>
               </a>
               <a 
-                href="tel:+1234567890" 
+                href={`tel:${company.contact.phone}`} 
                 className="flex items-center gap-3 text-purple-200 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
-                <span className="font-medium">+123-456-7890</span>
+                <span className="font-medium">{company.contact.phone}</span>
               </a>
               <a 
-                href="https://www.reallygreatsite.com" 
+                href={company.contact.website} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-purple-200 hover:text-white transition-colors group"
@@ -89,7 +89,7 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                   <Globe className="w-5 h-5" />
                 </div>
-                <span className="font-medium">www.reallygreatsite.com</span>
+                <span className="font-medium">{company.contact.website.replace('https://','')}</span>
               </a>
             </div>
           </div>

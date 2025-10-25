@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Sparkles, Lock, TrendingUp } from 'lucide-react';
+import { company } from "../content/companyProfile";
 
 const Vision = () => {
   const ref = useRef(null);
@@ -10,23 +11,10 @@ const Vision = () => {
   const springConfig = { type: "spring", stiffness: 120, damping: 18, mass: 0.75 };
   const bouncySpring = { type: "spring", stiffness: 200, damping: 15, mass: 0.8 };
 
-  const visionPoints = [
-    {
-      icon: Sparkles,
-      title: 'Innovation Leads the Way',
-      description: 'We harness cutting-edge technologies like AI, cloud, and automation to create smarter, faster, and more resilient enterprises.',
-    },
-    {
-      icon: Lock,
-      title: 'Trust Builds Growth',
-      description: 'We enable organizations to thrive with secure, compliant, and transparent digital ecosystems that foster long-term confidence.',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Enterprises Shape the Future',
-      description: 'We empower businesses worldwide to not only adapt to change but to lead it—driving sustainable impact for industries, people, and communities.',
-    },
-  ];
+  const visionPoints = company.vision.points.map((p) => ({
+    ...p,
+    icon: p.icon === 'Sparkles' ? Sparkles : p.icon === 'Lock' ? Lock : TrendingUp,
+  }));
 
   return (
     <section id="vision" ref={ref} className="py-24 bg-white">
@@ -38,14 +26,13 @@ const Vision = () => {
           className="text-center mb-20"
         >
           <span className="inline-block px-6 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-bold tracking-widest mb-4 font-orbitron">
-            OUR VISION
+            {company.vision.badge}
           </span>
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight font-orbitron">
-            LEADING THE FUTURE
+            {company.vision.heading}
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-poppins">
-            To be the global partner of choice for enterprises navigating digital transformation 
-            and shaping tomorrow's innovations.
+            {company.vision.body}
           </p>
         </motion.div>
 
@@ -96,7 +83,7 @@ const Vision = () => {
         >
           <div className="bg-gradient-to-r from-primary to-secondary p-10 rounded-2xl shadow-2xl">
             <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed font-poppins">
-              "Together, we don't just navigate change—we define it."
+              "{company.vision.quote}"
             </p>
           </div>
         </motion.div>
